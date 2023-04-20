@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CardComponent } from './card/card.component';
+import { ListaComponent } from './lista/lista.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroComponent,
-    CardComponent
+    CardComponent,
+    ListaComponent
   ],
   imports: [
     BrowserModule

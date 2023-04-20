@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent {
-  onClick(): void{
-    alert("Cadastre-se para ganhar premios");
+  cadastrar(): void{
+    alert("Cadastrar");
+  }
+
+  cancelar(): void{
+    alert("Cancelar");
   }
 }
