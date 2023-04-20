@@ -1,4 +1,4 @@
-<input type="text" placeholder="Nome"/>
-<input type="text" placeholder="CPF"/>
-<button type="button" (click)="cancelar()">Cancelar</button>
-<button type="button" (click)="cadastrar()">Cadastrar</button>
+<input #inputNome type="text" placeholder="Nome" [(ngModel)]="inNome"/>
+<input #inputCpf type="text" placeholder="CPF" [(ngModel)]="inCpf"/>
+<button type="button" (click)="cancelar();">Cancelar</button>
+<button type="button" (click)="cadastrar(inputNome.value, inputCpf.value);">Cadastrar</button>
