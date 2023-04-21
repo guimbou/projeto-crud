@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Pessoa } from '../pessoa';
+import { PESSOAS } from '../mock-pessoas';
+import { GerenciaPessoas } from '../gerenciaPessoas';
 
 @Component({
   selector: 'app-card',
@@ -7,14 +10,15 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
 
-  @Input() nome?: string;
-  @Input() cpf?: number;
+  @Input() pessoa: Pessoa = {};
+
+  constructor(private gerenciaPessoas: GerenciaPessoas) { }
 
   editar():void {
-    alert("Editar");
+    this.gerenciaPessoas.pessoaSelecionada = this.pessoa;
   }
 
-  deletar():void{
-    alert("Deletar");
+  remover():void{
+    this.gerenciaPessoas.remover(this.pessoa);
   }
 }

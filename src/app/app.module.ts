@@ -6,6 +6,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { CardComponent } from './card/card.component';
 import { ListaComponent } from './lista/lista.component';
 import { FormsModule } from '@angular/forms';
+import { GerenciaPessoas } from './gerenciaPessoas';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
