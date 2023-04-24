@@ -1,5 +1,19 @@
-<ul>
-    <li *ngFor="let pessoa of pessoas">
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-4">
+      <label class="fw-bold">NOME</label>
+    </div>
+    <div class="col-4">
+      <label class="fw-bold">CPF</label>
+    </div>
+  </div>
+</div>
+
+<div>
+  <ul class="container">
+    <li class="list-group-item" *ngFor="let pessoa of pessoas" >
         <app-card [pessoa]="pessoa" (pessoaSelecionada)="selecionar($event)"></app-card>
     </li>
-</ul>
+  </ul>
+</div>
+

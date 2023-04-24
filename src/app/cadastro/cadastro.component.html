@@ -1,5 +1,17 @@
-<input #inputNome type="text" placeholder="Nome" [(ngModel)]="inNome"/>
-<input #inputCpf type="text" placeholder="CPF" [(ngModel)]="inCpf"/>
-<button type="button" (click)="cancelar();">Cancelar</button>
-<button type="button" (click)="cadastrar();">Cadastrar</button>
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <input class="col-4 my-1" #inputNome type="text" placeholder="Nome" [(ngModel)]="inNome"/>
+  </div>
+  <div class="row justify-content-center">
+    <input class="col-4 my-1"  #inputCpf type="text" placeholder="CPF" [(ngModel)]="inCpf"/>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-secondary mx-1" type="button" (click)="cancelar();">Cancelar</button>
+      <button class="btn btn-primary mx-1" type="button" (click)="cadastrar();">Cadastrar</button>
+    </div>
+  </div>
+</div>
+
 <app-lista (pessoaSelecionada)="preencheCampos($event)"></app-lista>
