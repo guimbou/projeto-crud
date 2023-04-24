@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pessoa } from '../pessoa';
-import { PESSOAS } from '../mock-pessoas';
 import { GerenciaPessoas } from '../gerenciaPessoas';
 
 @Component({
@@ -10,12 +9,14 @@ import { GerenciaPessoas } from '../gerenciaPessoas';
 })
 export class CardComponent {
 
+  @Output() pessoaSelecionada = new EventEmitter<Pessoa>();
   @Input() pessoa: Pessoa = {};
 
   constructor(private gerenciaPessoas: GerenciaPessoas) { }
 
   editar():void {
-    this.gerenciaPessoas.pessoaSelecionada = this.pessoa;
+    //this.gerenciaPessoas.pessoaSelecionada = this.pessoa;
+    this.pessoaSelecionada.emit(this.pessoa);
   }
 
   remover():void{

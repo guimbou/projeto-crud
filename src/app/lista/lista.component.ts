@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { PESSOAS } from '../mock-pessoas';
 import { Pessoa } from '../pessoa';
 import { GerenciaPessoas } from '../gerenciaPessoas';
@@ -12,6 +12,12 @@ import { GerenciaPessoas } from '../gerenciaPessoas';
 export class ListaComponent {
 
   constructor(private gerenciaPessoas: GerenciaPessoas) { }
+
+  @Output() pessoaSelecionada = new EventEmitter<Pessoa>();
+
+  selecionar(evento:Pessoa){
+    this.pessoaSelecionada.emit(evento);
+  }
 
   pessoas: Pessoa[] = this.gerenciaPessoas.pessoas;
 }

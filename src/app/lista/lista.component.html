@@ -1,5 +1,5 @@
 <ul>
     <li *ngFor="let pessoa of pessoas">
-        <app-card [pessoa]="pessoa"></app-card>
+        <app-card [pessoa]="pessoa" (pessoaSelecionada)="selecionar($event)"></app-card>
     </li>
 </ul>

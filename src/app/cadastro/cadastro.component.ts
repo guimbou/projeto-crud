@@ -10,23 +10,35 @@ import { GerenciaPessoas } from '../gerenciaPessoas';
 })
 
 export class CadastroComponent {
-  
+
   inNome: string = '';
   inCpf: string = '';
+  pessoaSelecionada?: Pessoa;
 
-  constructor(private gerenciaPessoa: GerenciaPessoas) { 
+  constructor(private gerenciaPessoa: GerenciaPessoas) {
   }
 
-  cadastrar(nome: string, cpf: string): void{
-    let pessoa = new Pessoa(this.inNome, Number(this.inCpf));
-    this.gerenciaPessoa.adicionar(pessoa);
-    this.inNome = '';
-    this.inCpf = '';
+  preencheCampos(evento:Pessoa){
+    this.pessoaSelecionada = evento;
+    this.inNome = evento.nome!;
+    this.inCpf = String(evento.cpf);
+  }
+
+  cadastrar(): void {
+    if(this.pessoaSelecionada){
+      this.pessoaSelecionada.nome = this.inNome;
+      this.pessoaSelecionada.cpf = Number(this.inCpf);
+      this.cancelar();
+    } else {
+      let pessoa = new Pessoa(this.inNome, Number(this.inCpf));
+      this.gerenciaPessoa.adicionar(pessoa);
+      this.cancelar();
+    }
   }
 
   cancelar(): void{
+    this.pessoaSelecionada = undefined;
     this.inNome = '';
     this.inCpf = '';
-    //limpar a variavel isSelect;
   }
 }
