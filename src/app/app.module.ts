@@ -7,6 +7,7 @@ import { CardComponent } from './card/card.component';
 import { ListaComponent } from './lista/lista.component';
 import { FormsModule } from '@angular/forms';
 import { GerenciaPessoas } from './gerenciaPessoas';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GerenciaPessoas } from './gerenciaPessoas';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [
   ],

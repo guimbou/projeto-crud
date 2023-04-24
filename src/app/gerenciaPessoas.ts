@@ -11,7 +11,11 @@ export class GerenciaPessoas {
     pessoaSelecionada?: Pessoa;
     pessoas: Pessoa[] = [];
 
-    constructor() { }
+    constructor() {
+      this.pessoas.push(new Pessoa("Guilherme", 11));
+      this.pessoas.push(new Pessoa("Gabriel", 22));
+      this.pessoas.push(new Pessoa("João", 33));
+  }
 
     adicionar(pessoa: Pessoa): void{
         //console.log(this.pessoas);

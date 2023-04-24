@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { PESSOAS } from '../mock-pessoas';
 import { Pessoa } from '../pessoa';
 import { GerenciaPessoas } from '../gerenciaPessoas';
 
