@@ -8,6 +8,7 @@ import { ListaComponent } from './lista/lista.component';
 import { FormsModule } from '@angular/forms';
 import { GerenciaPessoas } from './gerenciaPessoas';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [
   ],
