@@ -24,6 +24,7 @@ export class CadastroComponent {
   }
 
   cadastrar(): void {
+    //se alterar, se não adicionar
     if(this.pessoaSelecionada){
       this.pessoaSelecionada.nome = this.inNome;
       this.pessoaSelecionada.cpf = Number(this.inCpf);

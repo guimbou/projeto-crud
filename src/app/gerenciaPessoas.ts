@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Pessoa } from "./pessoa";
 import { Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root'
@@ -8,39 +9,18 @@ import { Observable } from "rxjs";
 
 export class GerenciaPessoas {
 
-    pessoaSelecionada?: Pessoa;
-    pessoas: Pessoa[] = [];
+  pessoaSelecionada?: Pessoa;
 
-    constructor() {
-      this.pessoas.push(new Pessoa("Guilherme", 11));
-      this.pessoas.push(new Pessoa("Gabriel", 22));
-      this.pessoas.push(new Pessoa("João", 33));
+  constructor(private httpClient: HttpClient) {}
+
+  adicionar(pessoa: Pessoa): void{
+      this.httpClient.post("https://projeto-crud-data-default-rtdb.firebaseio.com/pessoas.json", pessoa).subscribe();
+			this.getPessoas().subscribe((resposta) => console.log(resposta));
   }
 
-    adicionar(pessoa: Pessoa): void{
-        //console.log(this.pessoas);
-        this.pessoas.push(pessoa);
-        console.log(this.pessoas);
-    }
+  remover(pessoa: Pessoa): void{}
 
-    remover(pessoa: Pessoa): void{
-        for( var i = 0; i < this.pessoas.length; i++){
-            if ( this.pessoas[i] === pessoa) {
-                this.pessoas.splice(i, 1);
-            }
-        }
-    }
-
-    buscaPorCPF(cpf: string): Pessoa | null {
-      for( var i = 0; i < this.pessoas.length; i++){
-        if ( this.pessoas[i].cpf === Number(cpf)) {
-          return this.pessoas[i];
-        }
-      }
-      return null;
-    }
-
-    helloClass(): void{
-        alert("Hello Class");
-    }
+	getPessoas(): Observable<Pessoa[]>{
+		return this.httpClient.get<Pessoa[]>("https://projeto-crud-data-default-rtdb.firebaseio.com/pessoas.json");
+	}
 }

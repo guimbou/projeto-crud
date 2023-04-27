@@ -18,5 +18,5 @@ export class ListaComponent {
     this.pessoaSelecionada.emit(evento);
   }
 
-  pessoas: Pessoa[] = this.gerenciaPessoas.pessoas;
+  //pessoas: Pessoa[] = this.gerenciaPessoas.pessoas;
 }
