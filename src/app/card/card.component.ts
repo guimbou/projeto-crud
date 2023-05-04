@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Pessoa } from '../pessoa';
 import { GerenciaPessoas } from '../gerenciaPessoas';
+import { SharedService } from '../sharedService';
 
 @Component({
   selector: 'app-card',
@@ -9,17 +9,18 @@ import { GerenciaPessoas } from '../gerenciaPessoas';
 })
 export class CardComponent {
 
-  @Output() pessoaSelecionada = new EventEmitter<Pessoa>();
-  @Input() pessoa: Pessoa = {};
+  @Output() pessoaSelecionada = new EventEmitter<any>();
+  @Input() pessoa: any = {};
 
-  constructor(private gerenciaPessoas: GerenciaPessoas) { }
+  constructor(private gerenciaPessoas: GerenciaPessoas, private sharedService:SharedService) { }
 
   editar():void {
-    //this.gerenciaPessoas.pessoaSelecionada = this.pessoa;
     this.pessoaSelecionada.emit(this.pessoa);
   }
 
   remover():void{
-    this.gerenciaPessoas.remover(this.pessoa);
+    console.log(this.pessoa.key);
+    this.gerenciaPessoas.remover(this.pessoa.key);
+    this.sharedService.sendClickEvent();
   }
 }

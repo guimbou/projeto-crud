@@ -10,10 +10,11 @@
 </div>
 
 <div>
-  <ul class="container">
-    <!--<li class="list-group-item" *ngFor="let pessoa of pessoas" >
+    <ul class="container">
+      <li class="list-group-item" *ngFor="let pessoa of pessoas | async | keyvalue ">
         <app-card [pessoa]="pessoa" (pessoaSelecionada)="selecionar($event)"></app-card>
-    </li>-->
-  </ul>
+      </li>
+      <button (click)="att()">atualiza</button>
+    </ul>
 </div>
 
