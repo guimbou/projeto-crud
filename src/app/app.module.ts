@@ -6,9 +6,9 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { CardComponent } from './card/card.component';
 import { ListaComponent } from './lista/lista.component';
 import { FormsModule } from '@angular/forms';
-import { GerenciaPessoas } from './gerenciaPessoas';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
   ],

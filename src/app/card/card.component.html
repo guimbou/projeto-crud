@@ -1,14 +1,14 @@
 <div class="">
   <div class="row">
     <div class="col-4">
-      <label>{{pessoa.nome}}</label>
+      <label>{{pessoa.value.nome}}</label>
     </div>
     <div class="col-4">
-      <label>{{pessoa.cpf}}</label>
+      <label>{{pessoa.value.cpf}}</label>
     </div>
     <div class="col-4 text-end">
       <button (click)="editar()">Edit</button>
-      <button  (click)="remover()">Del</button>
+      <button (click)="remover()">Del</button>
     </div>
   </div>
 </div>
