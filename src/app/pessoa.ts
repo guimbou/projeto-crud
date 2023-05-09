@@ -1,9 +1,13 @@
 export class Pessoa {
-    nome?: string;
-    cpf?: number;
+    key?: string;
+	value: {
+		nome: string;
+    	cpf: number;
+	} = {nome: '', cpf: 0};
 
     constructor(nome: string, cpf:number){
-        this.nome = nome;
-        this.cpf = cpf;
+        this.value.nome = nome;
+        this.value.cpf = cpf;
     }
+
 }

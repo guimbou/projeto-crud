@@ -37,7 +37,6 @@ export class ListaComponent implements OnInit {
       this.pessoas = this.gerenciaPessoas.atualizaLista();
     }, 900);
   }
-
 }
 
 

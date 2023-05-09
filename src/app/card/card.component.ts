@@ -19,7 +19,6 @@ export class CardComponent {
   }
 
   remover():void{
-    console.log(this.pessoa.key);
     this.gerenciaPessoas.remover(this.pessoa.key);
     this.sharedService.sendClickEvent();
   }
